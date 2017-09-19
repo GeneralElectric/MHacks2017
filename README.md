@@ -20,6 +20,10 @@ below:
 * MacOS - [Docker for Mac](https://www.docker.com/docker-mac)
 * Windows - [Docker for Windows](https://www.docker.com/docker-windows)
 
+You should note that many of the scripts in this repository are executing
+as **bash** scripts. So, if you are on a Windows machine, you will need the
+**Bash** shell installed.
+
 # Databases
 
 If you **just** need a database server running on your
