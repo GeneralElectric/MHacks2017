@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script will start a Mongo database and store the data in
+# local data files. It is expecting a Docker engine to be running.
+#
+# Usage:  ./start-mongo
+#
+if [ ! -d "./mongo-data" ] ; then
+  mkdir ./mongo-data
+fi
+
+docker run -p 27017:27017 -v mongo-data:/data -d mongo:3.4 > ./mongo-container.id
+docker ps
