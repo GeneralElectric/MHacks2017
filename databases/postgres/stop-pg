@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script will start a Postgres database and store the data in
+# local data files. It is expecting a Docker engine to be running.
+#
+# Usage:  ./stop-pg
+#
+if [ -e "pg-container.id" ] ; then
+  docker stop `cat pg-container.id`
+  docker ps
+else
+  echo "Error: could not find the container ID to stop - Docker ps to find it."
+fi

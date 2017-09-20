@@ -1,0 +1,16 @@
+#!/bin/bash
+# This script will start a Postgres database and store the data in
+# local data files. It is expecting a Docker engine to be running.
+#
+# Usage:  ./start-pg
+#
+if [ ! -d "./pg-data" ] ; then
+  mkdir ./pg-data
+fi
+
+docker run -p 5432:5432 -v pg-data:/var/lib/postgresql/data/pgdata \
+           -e POSTGRES_USER=postgres \
+           -e POSTGRES_PASSWORD=postgres \
+           -e PGDATA=/var/lib/postgresql/data/pgdata \
+           -d postgres:9.6 > ./pg-container.id
+docker ps

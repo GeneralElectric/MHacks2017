@@ -1,2 +1,2 @@
 *.id
-mongo-data
+mongo-data/*
