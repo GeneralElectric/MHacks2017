@@ -1,0 +1,14 @@
+#!/bin/bash
+# This script will start a MySQL database and store the data in
+# local data files. It is expecting a Docker engine to be running.
+#
+# Usage:  ./start-mysql
+#
+if [ ! -d "./mysql-data" ] ; then
+  mkdir ./mysql-data
+fi
+
+docker run -p 3306:3306 -v mysql-data:/var/lib/mysql \
+           -e MYSQL_ROOT_PASSWORD=mysqlsecret \
+           -d mysql:5.7 > ./mysql-container.id
+docker ps
