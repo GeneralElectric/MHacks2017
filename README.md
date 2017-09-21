@@ -24,6 +24,16 @@ You should note that many of the scripts in this repository are executing
 as **bash** scripts. So, if you are on a Windows machine, you will need the
 **Bash** shell installed.
 
+# Usage
+
+To use the scripts in this repository, you simpley need to clone the repository
+and follow the script execution instructions in the subdirectories of this
+repository. Use the following command to clone:
+
+```
+git clone https://github.com/GeneralElectric/MHacks2017.git
+```
+
 # Databases
 
 If you **just** need a database server running on your
