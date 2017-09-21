@@ -11,6 +11,7 @@ fi
 docker run -p 5432:5432 -v pg-data:/var/lib/postgresql/data/pgdata \
            -e POSTGRES_USER=postgres \
            -e POSTGRES_PASSWORD=postgres \
+           -e POSTGRES_DB=postgres \
            -e PGDATA=/var/lib/postgresql/data/pgdata \
            -d postgres:9.6 > ./pg-container.id
 docker ps
