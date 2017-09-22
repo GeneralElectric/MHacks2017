@@ -1,0 +1,19 @@
+version: '2.0'
+services:
+  app:
+    image: joonee/rails
+    environment:
+      DATABASE_HOST: database
+    volumes:
+      - ./app:/app
+    links:
+      - "database"
+    depends_on:
+      - "database"
+
+  database:
+    image: mongo:3.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data

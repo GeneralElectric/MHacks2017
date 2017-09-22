@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Command wrapper to execute rails commands in a docker container.
+#
+# Usage: ./rails-cmd <rails command arguments>
+#
+# Example: ./rails-cmd rails generate scaffold User first_name:string last_name:string
+#
+
+docker run -v ./app:/app joonee/rails $*
