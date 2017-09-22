@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    container_name: 'mongo-container.id'
+    image: 'mongo:3.4'
+    command: ''
+    ports:
+      - '0.0.0.0:27017:27017'
+    volumes:
+      - 'mongo-data:/data'

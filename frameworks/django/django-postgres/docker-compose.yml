@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    container_name: 'pg-container.id'
+    image: 'postgres:9.6'
+    command: ''
+    ports:
+      - '0.0.0.0:5432:5432'
+    volumes:
+      - '/var/lib/postgresql/data/pgdata'

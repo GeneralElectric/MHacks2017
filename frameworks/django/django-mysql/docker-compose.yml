@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    container_name: 'mysql-container.id'
+    image: 'mysql:5.7'
+    command: ''
+    ports:
+      - '0.0.0.0:3306:3306'
+    volumes:
+      - '/var/lib/mysql'
