@@ -1,0 +1,22 @@
+version: '2'
+services:
+  node:
+    image: node:boron
+    command: sh -c "npm install && npm start"
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+  postgres:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "pg-data:/var/lib/postgresql/data"
+volumes:
+  pg-data: {}
