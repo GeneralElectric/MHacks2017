@@ -4,7 +4,7 @@ The scripts provided in this directory makes it easy to start up a Node and Post
 
 ## Usage
 
-In your code, just specify `postgres` whereever you configure the connection host.
+In your code, just specify `postgres` wherever you configure the connection host.
 Here is a sample configuration using the postgres package:
 
 ```
@@ -13,7 +13,7 @@ const connectionString = "postgres://postgres:postgres@postgres/postgres"
 ```
 
 Here are the default credentials:
-```
+
 |Name | Default|
 |-----|--------|
 |POSTGRES_USER| postgres|
@@ -21,7 +21,6 @@ Here are the default credentials:
 |POSTGRES_DB|postgres|
 
 To modify any of these please the the `environment` section of `docker-compose.yml` then run `./run-node`
-```
 
 
 ## To start Mongo + Node
