@@ -1,0 +1,8 @@
+#!/bin/bash
+# This script will start a Node and Mongo Container.
+# It is expecting a Docker engine to be running
+#
+# Usage:  ./start-node
+#
+
+docker-compose up

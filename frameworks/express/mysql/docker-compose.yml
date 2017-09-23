@@ -1,0 +1,20 @@
+version: '2'
+services:
+  node:
+    image: node:boron
+    command: sh -c "npm install && npm start"
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - "mysql-data:/var/lib/mysql"
+volumes:
+  mysql-data: {}
