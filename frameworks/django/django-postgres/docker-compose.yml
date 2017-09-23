@@ -9,10 +9,9 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - postgres
 
-  db:
-    container_name: 'pg-container.id'
+  postgres:
     image: 'postgres:9.6'
     command: ''
     ports:

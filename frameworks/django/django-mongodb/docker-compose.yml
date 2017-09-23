@@ -9,13 +9,13 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - mongo
 
-  db:
-    container_name: 'mongo-container.id'
+  mongo:
     image: 'mongo:3.4'
-    command: ''
     ports:
       - '0.0.0.0:27017:27017'
     volumes:
-      - 'mongo-data:/data'
+      - 'mongo-data:/data/db'
+volumes:
+  mongo-data: {}
