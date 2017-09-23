@@ -1,0 +1,24 @@
+version: '2.0'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-pg
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    links:
+      - database
+    depends_on:
+      - database
+    command: "rails s -b 0.0.0.0"
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

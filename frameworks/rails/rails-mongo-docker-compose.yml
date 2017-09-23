@@ -1,0 +1,21 @@
+version: '2.0'
+services:
+  app:
+    build: .
+    environment:
+      DATABASE_HOST: database
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    links:
+      - "database"
+    depends_on:
+      - "database"
+
+  database:
+    image: mongo:3.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data
