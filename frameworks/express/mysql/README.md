@@ -1,24 +1,36 @@
-# Node & Mongo
+# MySQL & Postgres
 
-The scripts provided in this directory makes it easy to start up a Node and Mongo stack.
+The scripts provided in this directory makes it easy to start up a MySQL and Postgres stack.
 
 ## Usage
 
-In your code, just specify`mongo` whereever you configure the connection host.
-Here is a sample configuration using the mongodb package:
+In your code, just specify `postgres` wherever you configure the connection host.
+Here is a sample configuration using the postgres package:
 
 ```
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://*mongo*:27017/test';
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'mysql',
+  user     : 'root',
+  password : 'password'
+});
 ```
 
+Here are the default credentials:
 
-## To start Mongo + Node
+|Name | Default|
+|-----|--------|
+|HOST|mysql|
+|MYSQL_ROOT_PASSWORD| password|
+
+To modify any of these please open `docker-compose.yml` and edit the `environment` section.
+
+## To start Mongo + MySQL
 ```
 ./start-node
 ```
 
-## To stop Mongo + Node
+## To stop Mongo + MySQL
 ```
 ./start-node
 ```

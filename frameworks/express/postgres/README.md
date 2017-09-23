@@ -16,6 +16,7 @@ Here are the default credentials:
 
 |Name | Default|
 |-----|--------|
+|HOST| postgres|
 |POSTGRES_USER| postgres|
 |POSTGRE_PASSWORD| password|
 |POSTGRES_DB|postgres|
