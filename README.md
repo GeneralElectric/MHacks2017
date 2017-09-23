@@ -26,7 +26,7 @@ as **bash** scripts. So, if you are on a Windows machine, you will need the
 
 # Usage
 
-To use the scripts in this repository, you simpley need to clone the repository
+To use the scripts in this repository, you simply need to clone the repository
 and follow the script execution instructions in the subdirectories of this
 repository. Use the following command to clone:
 
