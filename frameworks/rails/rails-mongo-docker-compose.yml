@@ -1,11 +1,13 @@
 version: '2.0'
 services:
   app:
-    image: joonee/rails
+    build: .
     environment:
       DATABASE_HOST: database
     volumes:
       - ./app:/app
+    ports:
+      - "3000:3000"
     links:
       - "database"
     depends_on:

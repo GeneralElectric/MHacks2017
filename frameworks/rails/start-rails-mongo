@@ -1,9 +1,0 @@
-#/bin/bash
-# Command to standup a Rails + Mongo stack
-#
-# Usage: ./start-rails-mongo
-#
-
-echo "To stop the Rails + MongoDB stack enter: Control-C"
-
-docker-compose -f rails-mongo-docker-compose.yml up
